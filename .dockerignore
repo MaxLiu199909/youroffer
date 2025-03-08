@@ -1,0 +1,33 @@
+# git
+.git
+.gitignore
+
+# node.js
+node_modules
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# 编辑器配置
+.idea
+.vscode
+*.swp
+*.swo
+
+# 构建产物
+dist
+build
+
+# 日志
+logs
+*.log
+
+# Docker相关
+.dockerignore
+docker-compose*.yml
+Dockerfile
+
+# 其他
+README.md
+LICENSE
+.DS_Store
