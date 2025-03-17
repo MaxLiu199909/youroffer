@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 
 const Logo = ({ size = 'medium', isDarkMode = false }) => {
   const { language } = useLanguage();
+  const navigate = useNavigate();
   const logoSizes = {
     small: 'h-6',
     medium: 'h-10',
@@ -12,9 +14,10 @@ const Logo = ({ size = 'medium', isDarkMode = false }) => {
 
   return (
     <motion.div 
-      className="flex items-center"
+      className="flex items-center cursor-pointer"
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      onClick={() => navigate('/')}
     >
       <motion.div 
         className={`${logoSizes[size]} aspect-square rounded-lg bg-white bg-opacity-20 flex items-center justify-center mr-2 overflow-hidden`}

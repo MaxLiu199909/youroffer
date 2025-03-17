@@ -66,7 +66,10 @@ const MessageCenter = () => {
             >
               <FiArrowLeft className="text-lg" />
             </motion.button>
-            <h1 className="text-2xl font-bold">消息中心</h1>
+            <div className="flex items-center">
+              <FiMessageSquare className="text-primary mr-2" />
+              <h1 className="text-2xl font-bold">消息中心</h1>
+            </div>
           </div>
           
           <div className="relative">

@@ -126,8 +126,9 @@ const InterviewSchedule = () => {
           {interviews.map(interview => (
             <motion.div 
               key={interview.id}
-              className="bg-white rounded-xl shadow-sm p-6"
-              whileHover={{ y: -2 }}
+              className="bg-white rounded-xl shadow-sm p-6 cursor-pointer hover:border-primary hover:border transition-all duration-300"
+              whileHover={{ y: -2, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              onClick={() => navigate(`/interview/${interview.id}`)}
             >
               <div className="flex items-start gap-4">
                 {/* 公司Logo */}
@@ -168,6 +169,20 @@ const InterviewSchedule = () => {
                       <FiUser className="mr-2" />
                       面试官：{interview.interviewer}
                     </div>
+                  </div>
+                  
+                  <div className="mt-4 flex justify-end">
+                    <motion.button 
+                      className="px-4 py-2 bg-gradient-to-r from-primary to-primary-light text-white rounded-lg flex items-center"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={(e) => {
+                        e.stopPropagation();  // 防止触发父元素的点击事件
+                        navigate(`/interview/${interview.id}`);
+                      }}
+                    >
+                      进入面试 <FiChevronLeft className="ml-2 rotate-180" />
+                    </motion.button>
                   </div>
                 </div>
               </div>

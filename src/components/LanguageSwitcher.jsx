@@ -34,7 +34,7 @@ const LanguageSwitcher = () => {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center text-gray-700 hover:text-primary transition-colors duration-200 p-2 rounded-full hover:bg-gray-100"
+        className="flex items-center text-white hover:text-white transition-all duration-200 p-2 rounded-full hover:bg-white hover:bg-opacity-20"
         onClick={toggleDropdown}
         aria-label="Change language"
       >

@@ -124,7 +124,10 @@ const MyApplications = () => {
             >
               <FiChevronLeft className="text-lg" />
             </motion.button>
-            <h1 className="text-2xl font-bold">我的申请</h1>
+            <div className="flex items-center">
+              <FiCheckCircle className="text-primary mr-2" />
+              <h1 className="text-2xl font-bold">我的申请</h1>
+            </div>
           </div>
           <motion.button 
             className="flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-primary-light text-white shadow-sm hover:shadow-md transition-all duration-300"

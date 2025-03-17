@@ -3,13 +3,14 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import Dashboard from './pages/Dashboard';
-import JobList from './pages/JobList';
+import JobBrowser from './pages/JobBrowser';
 import ResumeManager from './pages/ResumeManager';
 import MatchDetails from './pages/MatchDetails';
 import Settings from './pages/Settings';
 import MyApplications from './pages/MyApplications';
 import SavedJobs from './pages/SavedJobs';
 import InterviewSchedule from './pages/InterviewSchedule';
+import InterviewRoom from './pages/InterviewRoom';
 import MessageCenter from './pages/MessageCenter';
 import OnboardingPage from './pages/Onboarding';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -37,7 +38,7 @@ function AppRoutes() {
       } />
       <Route path="/jobs" element={
         <ProtectedRoute>
-          <JobList />
+          <JobBrowser />
         </ProtectedRoute>
       } />
       <Route path="/resume" element={
@@ -68,6 +69,16 @@ function AppRoutes() {
       <Route path="/interviews" element={
         <ProtectedRoute>
           <InterviewSchedule />
+        </ProtectedRoute>
+      } />
+      <Route path="/interview/:id" element={
+        <ProtectedRoute>
+          <InterviewRoom />
+        </ProtectedRoute>
+      } />
+      <Route path="/interview" element={
+        <ProtectedRoute>
+          <InterviewRoom />
         </ProtectedRoute>
       } />
       <Route path="/messages" element={

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiUpload, FiEdit, FiTrash2, FiDownload, FiPlus, FiFileText, FiCheckCircle, FiAlertCircle, FiBarChart2 } from 'react-icons/fi';
+import { FiUpload, FiEdit, FiTrash2, FiDownload, FiPlus, FiFileText, FiCheckCircle, FiAlertCircle, FiBarChart2, FiChevronLeft } from 'react-icons/fi';
 import Logo from '../components/Logo';
 import UserDropdown from '../components/UserDropdown';
 
@@ -61,10 +61,23 @@ const ResumeManager = () => {
       
       {/* Main Content */}
       <main className="container mx-auto px-6 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-bold">简历管理</h1>
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center">
+            <motion.button 
+              className="flex items-center justify-center mr-4 p-2 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.history.back()}
+            >
+              <FiChevronLeft className="text-lg" />
+            </motion.button>
+            <div className="flex items-center">
+              <FiFileText className="text-primary mr-2" />
+              <h1 className="text-2xl font-bold">简历管理</h1>
+            </div>
+          </div>
           
-          <div className="flex space-x-3">
+          <div className="flex items-center space-x-3">
             <button className="flex items-center px-4 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 transition-colors duration-200">
               <FiUpload className="mr-2" />
               导入简历

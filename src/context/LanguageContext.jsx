@@ -30,20 +30,42 @@ export const translations = {
     // Hero section
     heroTitle: '找工作只需要一步',
     heroSubtitle: '让简历和工作机会完美匹配',
+    heroHighlight: '(匹配成功，强制面试)',
     exploreButton: '开始探索',
     watchDemo: '观看演示',
     
     // Features section
-    ourAdvantages: '我们的优势',
-    aiTechDescription: '利用最先进的AI技术，为您提供个性化的求职体验',
+    ourAdvantages: '超能力解锁 · 求职更轻松',
+    aiTechDescription: '一站式求职神器，让找工作变得像玩游戏一样简单有趣',
     
-    // Feature cards
-    intelligentParsing: '智能解析',
-    intelligentParsingDesc: 'AI技术自动解析简历，提取关键技能和经验',
-    efficientMatching: '高效匹配',
-    efficientMatchingDesc: '多维度分析职位需求，快速找到最适合的工作机会',
-    preciseRecommendation: '精准推荐',
-    preciseRecommendationDesc: '基于个人技能和职业发展方向，提供定制化职位推荐',
+    // Main Feature categories
+    intelligentParsing: '不卷简历 轻松匹配',
+    efficientMatching: '面试咖啡 稳拿Offer',
+    preciseRecommendation: '技能充值 职场开挂',
+    
+    // Sub-features for "不卷简历 轻松匹配"
+    resumeAI: '智能解析',
+    resumeAIDesc: '上传简历就躺平，AI一键解锁你的隐藏技能',
+    matchAlgorithm: '精准锁定',
+    matchAlgorithmDesc: '22维算法，比相亲软件还懂你，岗位匹配直接拉满',
+    smartPush: '躺赢投递',
+    smartPushDesc: '每天智能推送高匹配岗位，简历海投不再内卷',
+    
+    // Sub-features for "面试咖啡 稳拿Offer"
+    guaranteedInterview: '免战投递',
+    guaranteedInterviewDesc: '匹配即面试，HR已阅不回？不存在的！',
+    aiCoach: '模拟训练',
+    aiCoachDesc: 'AI面试小助手陪你练，答案怎么说，轻松拿高分',
+    realTimeFeedback: '实时打分',
+    realTimeFeedbackDesc: '面试回答即时点评，答题失误立马纠正，告别社死',
+    
+    // Sub-features for "技能充值 职场开挂"
+    skillGap: '技能清单',
+    skillGapDesc: '想转行不知从何开始？一键解锁大神养成路线图',
+    careerPath: '成长攻略',
+    careerPathDesc: '想当产品经理？AI定制专属"养成计划"，技能拉满不是梦',
+    resumeBoost: '简历变身',
+    resumeBoostDesc: '让你的简历从"已读不回"到"疯狂邀约"',
     
     // Stats section
     usersFound: '已有 10,000+ 用户找到理想工作',
@@ -103,20 +125,42 @@ export const translations = {
     // Hero section
     heroTitle: 'Job Search in Just One Step',
     heroSubtitle: 'Perfect matching between resumes and job opportunities',
+    heroHighlight: 'Match successfully, guaranteed interview',
     exploreButton: 'Start Exploring',
     watchDemo: 'Watch Demo',
     
     // Features section
-    ourAdvantages: 'Our Advantages',
-    aiTechDescription: 'Utilizing cutting-edge AI technology to provide personalized job-seeking experience',
+    ourAdvantages: 'Unlock Superpowers · Level Up Your Career',
+    aiTechDescription: 'All-in-one job search solution that makes finding your dream job as fun as playing a game',
     
-    // Feature cards
-    intelligentParsing: 'Intelligent Parsing',
-    intelligentParsingDesc: 'AI technology automatically parses resumes and extracts key skills and experiences',
-    efficientMatching: 'Efficient Matching',
-    efficientMatchingDesc: 'Multi-dimensional analysis of job requirements to quickly find the most suitable opportunities',
-    preciseRecommendation: 'Precise Recommendations',
-    preciseRecommendationDesc: 'Customized job recommendations based on personal skills and career development direction',
+    // Main Feature categories
+    intelligentParsing: 'Effortless Resume Matching',
+    efficientMatching: 'Interview Success Guaranteed',
+    preciseRecommendation: 'Level Up Your Career',
+    
+    // Sub-features for "Effortless Resume Matching"
+    resumeAI: 'AI-powered Resume Analysis',
+    resumeAIDesc: 'Upload once & chill: AI instantly unlocks your hidden talents',
+    matchAlgorithm: 'Smart Matching Algorithm',
+    matchAlgorithmDesc: 'Our 22-dimension algorithm knows you better than dating apps',
+    smartPush: 'Daily Recommendations',
+    smartPushDesc: 'Get high-match jobs without endless searching',
+    
+    // Sub-features for "Interview Success Guaranteed"
+    guaranteedInterview: 'No More Ghosting',
+    guaranteedInterviewDesc: 'Matching means interview, period!',
+    aiCoach: 'AI Interview Coach',
+    aiCoachDesc: 'Practice mode: AI interview buddy helps perfect your answers',
+    realTimeFeedback: 'Real-time Feedback',
+    realTimeFeedbackDesc: 'Instant corrections to avoid awkward moments',
+    
+    // Sub-features for "Level Up Your Career"
+    skillGap: 'Skill Roadmap',
+    skillGapDesc: 'Want to switch careers? Unlock your personalized path to success',
+    careerPath: 'Growth Hacking',
+    careerPathDesc: 'Want to be a Product Manager? AI creates your custom skill plan',
+    resumeBoost: 'Resume Transformation',
+    resumeBoostDesc: 'Turn "seen" into "invited"',
     
     // Stats section
     usersFound: '10,000+ users have found their ideal jobs',

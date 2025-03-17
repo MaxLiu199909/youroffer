@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSearch, FiFilter, FiMapPin, FiDollarSign, FiClock } from 'react-icons/fi';
+import { FiSearch, FiFilter, FiMapPin, FiDollarSign, FiClock, FiChevronLeft } from 'react-icons/fi';
 import Logo from '../components/Logo';
 import UserDropdown from '../components/UserDropdown';
 import JobDetailDialog from '../components/JobDetailDialog';
@@ -57,8 +57,21 @@ const JobList = () => {
       </header>
       
       <main className="container mx-auto px-6 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-bold">职位匹配</h1>
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center">
+            <motion.button 
+              className="flex items-center justify-center mr-4 p-2 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.history.back()}
+            >
+              <FiChevronLeft className="text-lg" />
+            </motion.button>
+            <div className="flex items-center">
+              <FiSearch className="text-primary mr-2" />
+              <h1 className="text-2xl font-bold">职位匹配</h1>
+            </div>
+          </div>
           
           <div className="flex space-x-4">
             <div className="relative">

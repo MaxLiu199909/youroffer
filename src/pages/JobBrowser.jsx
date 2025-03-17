@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiSearch, FiFilter, FiMapPin, FiDollarSign, FiClock, FiStar, FiShare2, FiBookmark, FiX, FiGrid, FiList, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Logo from '../components/Logo';
+import UserDropdown from '../components/UserDropdown';
+import JobApplicationDialog from '../components/JobApplicationDialog';
 
 const JobBrowser = () => {
   const [viewMode, setViewMode] = useState('grid');
   const [selectedJob, setSelectedJob] = useState(null);
+  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
   const [filters, setFilters] = useState({
     location: '',
     salary: '',
@@ -113,27 +116,62 @@ const JobBrowser = () => {
     });
   };
   
+  const handleApply = () => {
+    setIsApplicationOpen(true);
+  };
+  
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Logo />
+            <Logo isDarkMode={true} size="medium" />
             
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-medium">
-                  ZS
-                </div>
-              </div>
-            </div>
+            <UserDropdown />
           </div>
         </div>
       </header>
       
       {/* Main Content */}
       <main className="container mx-auto px-6 py-8">
+        {/* 页面标题 */}
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center">
+            <motion.button 
+              className="flex items-center justify-center mr-4 p-2 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.history.back()}
+            >
+              <FiChevronLeft className="text-lg" />
+            </motion.button>
+            <div className="flex items-center">
+              <FiSearch className="text-primary mr-2" />
+              <h2 className="text-2xl font-bold">职位浏览</h2>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <div className="flex bg-gray-100 rounded-lg p-1">
+              <button 
+                className={`px-4 py-2 rounded-md flex items-center ${viewMode === 'grid' ? 'bg-white shadow-sm' : ''}`}
+                onClick={() => setViewMode('grid')}
+              >
+                <FiGrid className="mr-2" />
+                网格视图
+              </button>
+              <button 
+                className={`px-4 py-2 rounded-md flex items-center ${viewMode === 'list' ? 'bg-white shadow-sm' : ''}`}
+                onClick={() => setViewMode('list')}
+              >
+                <FiList className="mr-2" />
+                列表视图
+              </button>
+            </div>
+          </div>
+        </div>
+        
         {/* Search and Filter Bar */}
         <div className="bg-white rounded-xl shadow-sm p-4 mb-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -341,8 +379,11 @@ const JobBrowser = () => {
                   <button className="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200">
                     <FiBookmark />
                   </button>
-                  <button className="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200">
-                    <FiShare2 />
+                  <button 
+                    className="gradient-button"
+                    onClick={handleApply}
+                  >
+                    立即申请
                   </button>
                 </div>
               </div>
@@ -374,15 +415,18 @@ const JobBrowser = () => {
                   <button className="px-6 py-3 bg-white border border-gray-200 rounded-lg text-gray-700 hover:border-primary hover:text-primary transition-colors duration-200">
                     查看公司
                   </button>
-                  <button className="gradient-button">
-                    立即申请
-                  </button>
                 </div>
               </div>
             </motion.div>
           )}
         </div>
       </main>
+      
+      <JobApplicationDialog
+        isOpen={isApplicationOpen}
+        onClose={() => setIsApplicationOpen(false)}
+        job={selectedJob}
+      />
     </div>
   );
 };

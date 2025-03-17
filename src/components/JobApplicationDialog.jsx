@@ -39,10 +39,10 @@ const JobApplicationDialog = ({ isOpen, onClose, job }) => {
           exit={{ opacity: 0 }}
           open={isOpen}
           onClose={onClose}
-          className="fixed inset-0 z-50 overflow-y-auto"
+          className="fixed inset-0 z-[100] overflow-y-auto"
         >
           <div className="min-h-screen px-4 text-center">
-            <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+            <Dialog.Overlay className="fixed inset-0 bg-black opacity-50" />
             
             <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
             
@@ -50,7 +50,7 @@ const JobApplicationDialog = ({ isOpen, onClose, job }) => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle bg-white shadow-xl rounded-2xl"
+              className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle bg-white shadow-xl rounded-2xl z-[110] relative"
             >
               {!isSuccess ? (
                 <>

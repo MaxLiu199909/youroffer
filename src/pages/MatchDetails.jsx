@@ -67,12 +67,34 @@ const MatchDetails = () => {
       
       {/* Main Content */}
       <main className="container mx-auto px-6 py-8">
-        <div className="flex items-center mb-8">
-          <Link to="/jobs" className="flex items-center text-gray-600 hover:text-primary transition-colors duration-200">
-            <FiArrowLeft className="mr-2" />
-            返回职位列表
-          </Link>
-          <h1 className="text-2xl font-bold ml-4">匹配分析结果</h1>
+        {/* 页面标题 */}
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center">
+            <motion.button 
+              className="flex items-center justify-center mr-4 p-2 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.history.back()}
+            >
+              <FiArrowLeft className="text-lg" />
+            </motion.button>
+            <div className="flex items-center">
+              <FiBarChart2 className="text-primary mr-2" />
+              <h2 className="text-2xl font-bold">匹配分析结果</h2>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <motion.button 
+              className="flex items-center px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-all duration-300"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => window.print()}
+            >
+              <FiDownload className="mr-2" />
+              导出报告
+            </motion.button>
+          </div>
         </div>
         
         {/* Job Info */}
